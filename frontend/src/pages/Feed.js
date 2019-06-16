@@ -18,7 +18,7 @@ export default class Feed extends Component{
         this.registerToSocket()
     }
     registerToSocket = () =>{
-        const socket = io('http://localhost:3333')
+        const socket = io('http://192.168.15.5:3333')
 
         socket.on('post', newPost=>{
             this.setState({feed: [newPost, ...this.state.feed]})
@@ -47,7 +47,7 @@ export default class Feed extends Component{
                         </div>
                         <img src={more} alt="mais"/>
                     </header>
-                    <img src={`http://localhost:3333/files/${post.image}`} alt=""/>
+                    <img src={`http://192.168.15.5:3333/files/${post.image}`} alt=""/>
                     <footer>
                         <div className="actions">
                             <button type="button" onClick={()=>this.handleLike(post._id)}>
